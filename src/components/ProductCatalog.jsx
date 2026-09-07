@@ -7,7 +7,7 @@ const ProductCatalog = () => {
   const [activeTab, setActiveTab] = useState('All');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const categories = ['All', 'Hair Oils', 'Shampoos', 'Protein Powders', 'Combos'];
+  const categories = ['All', 'Hair Oils', 'Shampoos', 'Protein Powders', 'Face Packs', 'Combos'];
 
   const filteredProducts = activeTab === 'All' 
     ? products 

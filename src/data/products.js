@@ -10,7 +10,7 @@ export const products = [
     reviews: 124,
     image: '/images/oil.png',
     badge: 'Bestseller',
-    description: '100% Ayurvedic hair oil infused with Bhringraj, Amla, and 12 exotic herbs. Clinically proven to reduce hair fall and promote new growth.',
+    description: '100% Ayurvedic hair oil infused with Bhringraj, Amla, and a blend of 25+ exotic jadi-booties. Clinically proven to reduce hair fall and promote new growth.',
     features: ['Reduces Hair Fall', 'Promotes Growth', 'Sulphate & Paraben Free'],
   },
   {
@@ -53,5 +53,19 @@ export const products = [
     badge: 'Best Value',
     description: 'The complete Ayurvedic hair care routine. Includes our signature Hair Oil, Herbal Shampoo, and Plant Protein Powder for maximum results.',
     features: ['Complete Routine', 'Maximum Savings', 'Free Scalp Massager'],
+  },
+  {
+    id: 'p5',
+    name: 'KeshVeda Ubtan & Haldi Radiant Face Pack',
+    category: 'Face Packs',
+    concern: 'Glowing Skin',
+    price: 349,
+    originalPrice: 499,
+    rating: 4.8,
+    reviews: 112,
+    image: '/images/oil.png',
+    badge: 'New Arrival',
+    description: 'A traditional Ayurvedic face pack crafted with a potent blend of 25+ rare herbs, Haldi, and Chandan to restore your natural glow and clear blemishes.',
+    features: ['Restores Natural Glow', 'Clears Blemishes', '100% Chemical Free'],
   }
 ];

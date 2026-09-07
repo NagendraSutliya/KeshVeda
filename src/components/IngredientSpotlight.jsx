@@ -11,9 +11,9 @@ const IngredientSpotlight = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <span className="text-ayurGold-400 font-bold tracking-widest uppercase text-sm mb-2 block">The Science of Ayurveda</span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Power of Pure Jadi-Booti</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Power of 25+ Pure Jadi-Booties</h2>
           <p className="text-herbal-100 max-w-2xl mx-auto text-lg font-light">
-            Every KeshVeda product is powered by centuries-old Ayurvedic wisdom, using only the purest, unadulterated botanical extracts.
+            Every KeshVeda product is powered by a potent blend of more than 25 rare Ayurvedic herbs, using only the purest, unadulterated botanical extracts for your hair and skin.
           </p>
         </div>
 

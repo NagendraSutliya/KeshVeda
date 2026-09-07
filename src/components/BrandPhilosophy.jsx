@@ -24,7 +24,7 @@ const BrandPhilosophy = () => {
             </div>
             <h3 className="text-xl font-serif font-bold text-stone-800 mb-3">100% Pure & Unadulterated</h3>
             <p className="text-stone-600 text-sm leading-relaxed">
-              We source our herbs directly from organic farms. No synthetic fragrances, no parabens, and absolutely zero sulphates. Just the raw power of nature.
+              We source more than 25+ rare jadi-booties directly from organic farms. No synthetic fragrances, no parabens, and absolutely zero sulphates. Just the raw power of nature.
             </p>
           </div>
 
