@@ -3,6 +3,7 @@ import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustBadges from './components/TrustBadges';
+import BrandPhilosophy from './components/BrandPhilosophy';
 import HairQuizModal from './components/HairQuizModal';
 import ProductCatalog from './components/ProductCatalog';
 import CartDrawer from './components/CartDrawer';
@@ -22,8 +23,9 @@ function App() {
         <main>
           <Hero onOpenQuiz={() => setIsQuizOpen(true)} />
           <TrustBadges />
-          <ProductCatalog />
+          <BrandPhilosophy />
           <IngredientSpotlight />
+          <ProductCatalog />
           <Testimonials />
           <FAQSection />
         </main>

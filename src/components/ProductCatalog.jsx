@@ -18,8 +18,8 @@ const ProductCatalog = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-herbal-900 mb-4">Shop Ayurvedic Solutions</h2>
-          <p className="text-stone-600 max-w-2xl mx-auto">100% natural formulations tailored for Indian hair concerns. Clinically tested, visibly effective.</p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-herbal-900 mb-4">Our Formulations</h2>
+          <p className="text-stone-600 max-w-2xl mx-auto">Discover our targeted Ayurvedic solutions. Crafted without compromise to treat your specific hair concerns from the root.</p>
         </div>
 
         {/* Filters */}
