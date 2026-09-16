@@ -1,0 +1,53 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Priya Sharma",
+      "location": "Mumbai",
+      "product": "Bhringraj Oil + Shampoo",
+      "rating": 5,
+      "text": "I was suffering from severe postpartum hair fall. After using KeshVeda for 45 days, my hair fall has reduced by 80% and I can see new baby hairs growing!",
+      "image": "https://i.pravatar.cc/150?img=43"
+    },
+    {
+      "id": 2,
+      "name": "Rohan Desai",
+      "location": "Bangalore",
+      "product": "Plant Protein Powder",
+      "rating": 5,
+      "text": "Adding the Ayurvedic Protein Powder to my daily smoothie completely changed my hair texture. It's much thicker now and doesn't break easily.",
+      "image": "https://i.pravatar.cc/150?img=11"
+    },
+    {
+      "id": 3,
+      "name": "Ananya Patel",
+      "location": "Ahmedabad",
+      "product": "Ultimate Rejuvenation Kit",
+      "rating": 5,
+      "text": "The smell is pure herbs, no artificial perfumes. My dandruff is completely gone after using the Shikakai shampoo just 3 times. Highly recommended!",
+      "image": "https://i.pravatar.cc/150?img=47"
+    },
+    {
+      "name": "Kavita",
+      "location": "Jaipur",
+      "product": "Bhringraj Oil + Shampoo",
+      "text": "Very good product.",
+      "rating": 5,
+      "id": 4
+    },
+    {
+      "name": "Shelu",
+      "location": "Udaipur",
+      "product": "Plant Protein Powder",
+      "text": "Very good and beneficial product. very effective",
+      "rating": 5,
+      "id": 5
+    }
+  ],
+  "stats": [
+    {
+      "id": "visitors",
+      "count": 3
+    }
+  ]
+}

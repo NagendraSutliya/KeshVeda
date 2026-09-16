@@ -1,10 +1,39 @@
-import React from 'react';
-import { Leaf, Instagram, Facebook, Twitter } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Leaf, Instagram, Facebook, Twitter, Users } from 'lucide-react';
 
 const Footer = () => {
+  const [visitorCount, setVisitorCount] = useState(0);
+
+  useEffect(() => {
+    // Fetch the current count, increment it, and save it back to the database
+    fetch('http://localhost:5000/stats/visitors')
+      .then(res => res.json())
+      .then(data => {
+        const currentCount = data.count !== undefined ? data.count : 50124;
+        const newCount = currentCount + 1;
+        
+        // Send the updated count to the server
+        fetch('http://localhost:5000/stats/visitors', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ count: newCount })
+        })
+        .then(() => setVisitorCount(newCount))
+        .catch(err => {
+          console.error("Failed to update visitor count:", err);
+          setVisitorCount(currentCount);
+        });
+      })
+      .catch(err => {
+        console.error("Error fetching stats:", err);
+        setVisitorCount(50124); // Fallback
+      });
+  }, []);
   return (
     <footer className="bg-herbal-950 text-herbal-100/70 pt-16 pb-8 border-t border-herbal-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
           {/* Brand Col */}
@@ -67,9 +96,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-herbal-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-          <p>© 2026 KeshVeda Ayurvedic Wellness. All rights reserved.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
+        <div className="border-t border-herbal-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs gap-5 md:gap-0">
+          <div className="order-1 md:order-2 flex items-center space-x-2 bg-herbal-900/50 px-3 py-1.5 rounded-full border border-herbal-800 mb-2 md:mb-0">
+            <Users size={14} className="text-ayurGold-500" />
+            <span className="text-herbal-300 font-medium">Total Visitors:</span>
+            <span className="text-white font-bold">{visitorCount.toLocaleString()}</span>
+          </div>
+
+          <p className="order-2 md:order-1 text-center md:text-left text-herbal-100/70">
+            © 2026 KeshVeda Ayurvedic Wellness. All rights reserved.
+          </p>
+          
+          <div className="order-3 flex space-x-4 justify-center md:justify-end">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>

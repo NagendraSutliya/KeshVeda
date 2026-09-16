@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star, Leaf } from 'lucide-react';
 
 const Hero = ({ onOpenQuiz }) => {
+  const [reviews, setReviews] = useState([]);
+  
+  useEffect(() => {
+    fetch('http://localhost:5000/reviews')
+      .then(res => res.json())
+      .then(data => setReviews(data))
+      .catch(err => console.error("Error fetching reviews:", err));
+  }, []);
+
+  const averageRating = reviews.length ? (reviews.reduce((acc, curr) => acc + (curr.rating || 5), 0) / reviews.length).toFixed(1) : 0;
+  const totalReviews = reviews.length;
   return (
-    <div className="relative bg-herbal-900 text-cream-50 overflow-hidden pt-10 pb-20 lg:pt-20 lg:pb-28">
+    <div className="relative bg-herbal-900 text-cream-50 overflow-hidden pt-10 pb-16 lg:pt-20 lg:pb-28">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20">
         <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[100%] rounded-full bg-herbal-700 blur-3xl"></div>
@@ -15,9 +26,20 @@ const Hero = ({ onOpenQuiz }) => {
           
           {/* Text Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center space-x-2 bg-herbal-800/50 border border-herbal-600/50 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
-              <Star size={14} className="text-ayurGold-400 fill-ayurGold-400" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-ayurGold-200">Trusted by 50,000+ Indians</span>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6">
+              <div className="inline-flex items-center space-x-2 bg-herbal-800/50 border border-herbal-600/50 rounded-full px-4 py-1.5 backdrop-blur-sm">
+                <Star size={14} className="text-ayurGold-400 fill-ayurGold-400" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-ayurGold-200">Trusted by 50,000+ Indians</span>
+              </div>
+              
+              {reviews.length > 0 && (
+                <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 backdrop-blur-sm cursor-pointer hover:bg-white/20 transition-colors" title={`${averageRating} rating based on ${totalReviews} reviews`}>
+                  <span className="text-sm font-bold text-white">{averageRating}</span>
+                  <Star size={14} className="text-green-400 fill-green-400" />
+                  <span className="text-white/40">|</span>
+                  <span className="text-sm text-white/90 hover:underline"><a href="#reviews">{totalReviews} Reviews</a></span>
+                </div>
+              )}
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6">

@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 'p1',
-    name: 'KeshVeda Bhringraj & Amla Hair Growth Oil',
+    name: 'KeshVeda Sarv-Aushadhi Hair Growth Oil',
     category: 'Hair Oils',
     concern: 'Hair Fall',
     price: 499,
@@ -15,7 +15,7 @@ export const products = [
   },
   {
     id: 'p2',
-    name: 'KeshVeda Onion & Shikakai Herbal Shampoo',
+    name: 'KeshVeda Sarv-Aushadhi Clarifying Shampoo',
     category: 'Shampoos',
     concern: 'Dandruff',
     price: 399,

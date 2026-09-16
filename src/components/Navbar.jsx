@@ -13,7 +13,7 @@ const Navbar = () => {
       </div>
       
       <nav className="sticky top-0 z-40 glass-card border-b border-herbal-200/30 w-full transition-all duration-300 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Mobile Menu Button */}
             <div className="flex items-center md:hidden">
