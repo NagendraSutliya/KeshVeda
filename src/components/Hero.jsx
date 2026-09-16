@@ -5,7 +5,8 @@ const Hero = ({ onOpenQuiz }) => {
   const [reviews, setReviews] = useState([]);
   
   useEffect(() => {
-    fetch('http://localhost:5000/reviews')
+    const API_URL = import.meta.env.VITE_API_URL || '';
+    fetch(`${API_URL}/api/reviews`)
       .then(res => res.json())
       .then(data => setReviews(data))
       .catch(err => console.error("Error fetching reviews:", err));
