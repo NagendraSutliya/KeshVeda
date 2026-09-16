@@ -11,7 +11,8 @@ const Testimonials = () => {
 
   // Fetch reviews on mount
   useEffect(() => {
-    fetch('/api/reviews')
+    const API_URL = import.meta.env.VITE_API_URL || '';
+    fetch(`${API_URL}/api/reviews`)
       .then(res => res.json())
       .then(data => {
         // Sort to show newest first, assuming higher ID means newer
@@ -36,7 +37,8 @@ const Testimonials = () => {
 
   const handleAddReview = async (newReview) => {
     try {
-      const response = await fetch('/api/reviews', {
+      const API_URL = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${API_URL}/api/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
