@@ -74,9 +74,9 @@ const Testimonials = () => {
           <p className="text-stone-600 mb-4">Join 50,000+ Indians who have transformed their hair naturally.</p>
         </div>
         
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-4">
           {reviews.length > 0 && (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center sm:items-start">
               <div className="flex items-center gap-3 mb-2">
                 <div className="flex items-center text-3xl font-bold text-stone-900">
                   {averageRating} <Star className="ml-1.5 fill-green-700 text-green-700" size={26} />
@@ -85,18 +85,20 @@ const Testimonials = () => {
                   {ratingText}
                 </span>
               </div>
-              <p className="text-sm text-stone-500 flex items-center">
-                based on {totalReviews} ratings by 
-                <svg className="w-4 h-4 ml-1.5 mr-0.5 text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Verified Buyers
+              <p className="text-sm text-stone-500 flex flex-wrap justify-center sm:justify-start items-center gap-x-1">
+                <span>based on {totalReviews} ratings by</span>
+                <span className="flex items-center">
+                  <svg className="w-4 h-4 mr-0.5 text-stone-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Verified Buyers
+                </span>
               </p>
             </div>
           )}
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-2 bg-herbal-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-herbal-900 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="flex items-center justify-center w-full sm:w-auto gap-2 bg-herbal-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-herbal-900 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             <Plus size={20} />
             Write a Review
