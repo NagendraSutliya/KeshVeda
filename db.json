@@ -33,6 +33,7 @@
       "product": "Bhringraj Oil + Shampoo",
       "text": "Very good product.",
       "rating": 5,
+      "image": "https://i.pravatar.cc/150?u=Kavita",
       "id": 4
     },
     {
@@ -42,12 +43,20 @@
       "text": "Very good and beneficial product. very effective",
       "rating": 5,
       "id": 5
+    },
+    {
+      "name": "John",
+      "location": "London",
+      "product": "Ultimate Hair Rejuvenation Kit",
+      "text": "Its really a very good and effective product.",
+      "rating": 5,
+      "id": 6
     }
   ],
   "stats": [
     {
       "id": "visitors",
-      "count": 3
+      "count": 23
     }
   ]
 }

@@ -6,14 +6,14 @@ const Footer = () => {
 
   useEffect(() => {
     // Fetch the current count, increment it, and save it back to the database
-    fetch('http://localhost:5000/stats/visitors')
+    fetch('/api/stats/visitors')
       .then(res => res.json())
       .then(data => {
         const currentCount = data.count !== undefined ? data.count : 50124;
         const newCount = currentCount + 1;
         
         // Send the updated count to the server
-        fetch('http://localhost:5000/stats/visitors', {
+        fetch('/api/stats/visitors', {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
