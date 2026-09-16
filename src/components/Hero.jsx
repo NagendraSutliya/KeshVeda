@@ -76,7 +76,7 @@ const Hero = ({ onOpenQuiz }) => {
             
             <div className="relative z-10 transform lg:scale-110 lg:translate-x-10">
               <img 
-                src="/images/combo.png" 
+                src="/images/KeshVeda Ultimate Hair Rejuvenation Kit.jpg" 
                 alt="KeshVeda Premium Ayurvedic Combo Set" 
                 className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-2xl"
               />
