@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Leaf, Instagram, Facebook, Twitter, Users } from 'lucide-react';
 
 const Footer = () => {
-  const [visitorCount, setVisitorCount] = useState(0);
+  const [visitorCount, setVisitorCount] = useState(null);
 
   useEffect(() => {
     // Fetch the current count, increment it, and save it back to the database
     const API_URL = import.meta.env.VITE_API_URL || '';
     fetch(`${API_URL}/api/stats/visitors`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch');
+        return res.json();
+      })
       .then(data => {
-        const currentCount = data.count !== undefined ? data.count : 50124;
+        const currentCount = data.count !== undefined ? data.count : 0;
         const newCount = currentCount + 1;
         
         // Send the updated count to the server
@@ -21,7 +24,10 @@ const Footer = () => {
           },
           body: JSON.stringify({ count: newCount })
         })
-        .then(() => setVisitorCount(newCount))
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to update');
+          setVisitorCount(newCount);
+        })
         .catch(err => {
           console.error("Failed to update visitor count:", err);
           setVisitorCount(currentCount);
@@ -29,7 +35,7 @@ const Footer = () => {
       })
       .catch(err => {
         console.error("Error fetching stats:", err);
-        setVisitorCount(50124); // Fallback
+        setVisitorCount(null); // Keep as null on error
       });
   }, []);
   return (
@@ -101,7 +107,7 @@ const Footer = () => {
           <div className="order-1 md:order-2 flex items-center space-x-2 bg-herbal-900/50 px-3 py-1.5 rounded-full border border-herbal-800 mb-2 md:mb-0">
             <Users size={14} className="text-ayurGold-500" />
             <span className="text-herbal-300 font-medium">Total Visitors:</span>
-            <span className="text-white font-bold">{visitorCount.toLocaleString()}</span>
+            <span className="text-white font-bold">{visitorCount !== null ? visitorCount.toLocaleString() : "Loading..."}</span>
           </div>
 
           <p className="order-2 md:order-1 text-center md:text-left text-herbal-100/70">

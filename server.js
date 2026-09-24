@@ -70,7 +70,7 @@ app.get('/api/stats/visitors', async (req, res) => {
   try {
     const stat = await db.collection('stats').findOne({ id: 'visitors' });
     if (!stat) {
-      return res.json({ count: 50124 });
+      return res.json({ count: 0 });
     }
     res.json({ count: stat.count });
   } catch (error) {

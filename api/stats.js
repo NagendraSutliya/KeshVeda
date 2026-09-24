@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       const stat = await collection.findOne({ id: 'visitors' });
       // If it doesn't exist, return default
       if (!stat) {
-        return res.status(200).json({ count: 50124 });
+        return res.status(200).json({ count: 0 });
       }
       res.status(200).json({ count: stat.count });
     } else if (req.method === 'PATCH' || req.method === 'PUT') {
